@@ -1,4 +1,4 @@
-# CTLab PowerShell Tools CTLPS-Tools) - Custom scripts and functions in PowerShell
+# CTLab PowerShell Tools (CTLPS-Tools) - Custom scripts and functions in PowerShell
 A collection of PowerShell scripts and functions that I wrote while working on various projects.
 
 ## Tools for Microsoft Teams
