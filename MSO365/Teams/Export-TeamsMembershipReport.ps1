@@ -1,6 +1,6 @@
 ﻿#########################################################################################
 #                                                                                       #
-# Export-TeamsMembership.ps1 - v0.1 (7Apr2020)                                          #
+# Export-TeamsMembership.ps1 - v0.1 (7 Apr 2020)                                          #
 #                                                                                       #
 # Export a report in CSV with three columns: TeamName, Owners, Members                  #
 #                                                                                       #
