@@ -2,5 +2,5 @@
 A collection of PowerShell scripts and functions that I wrote while working on various projects.
 
 ## Tools for Microsoft Teams
-### Export-TeamsMembership.ps1
+### Export-TeamsMembership.ps1 (script)
 Export a report in CSV with three columns: TeamName, Owners, Members.
