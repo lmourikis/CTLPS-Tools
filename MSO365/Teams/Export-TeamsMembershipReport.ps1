@@ -1,19 +1,9 @@
-<<<<<<< HEAD
-﻿<#
+<#
 .SYNOPSIS
 Export-TeamsMembership.ps1 - v0.1 (7 Apr 2020)
 
 Export a report in CSV with three columns: TeamName, Owners, Members
 #>
-=======
-﻿#########################################################################################
-#                                                                                       #
-# Export-TeamsMembership.ps1 - v0.1 (7 Apr 2020)                                        #
-#                                                                                       #
-# Export a report in CSV with three columns: TeamName, Owners, Members                  #
-#                                                                                       #
-#########################################################################################
->>>>>>> 6a938e44d7ce6ccbdc939b9ae7fa1bd90adcc63b
 
 
 # Login if required
