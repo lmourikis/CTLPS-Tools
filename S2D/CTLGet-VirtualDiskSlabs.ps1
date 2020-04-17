@@ -1,4 +1,4 @@
-Function GetCTL-VirtualDiskSlabs {
+Function CTLGet-VirtualDiskSlabs {
 <#
 .SYNOPSIS
     View physical disks and virtual disks' extents (aka slabs) correlation.
