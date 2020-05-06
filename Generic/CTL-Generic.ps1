@@ -18,11 +18,15 @@ function CTLGet-StringHash {
         $writer.write("$($InputString)")
         $writer.Flush()
         $stringAsStream.Position = 0
-        #$md5response = Get-FileHash -InputStream $stringAsStream | Select-Object -ExpandProperty Hash
-        $md5response = Get-FileHash -InputStream $stringAsStream -Algorithm $HashAlgorithm | Select-Object Hash
+        Get-FileHash -InputStream $stringAsStream -Algorithm $HashAlgorithm | Select-Object -ExpandProperty Hash -OutVariable $md5response
     } # End of Process
 
     End {
-        Return $md5response
+        # Adding a coma in Return hopefully will make the function return a single item array.
+        # However, this does not seem the case. As an alternative you can use the function
+        # output in your code as follows:
+        # $myHash = CTLGet-StringHash -InputString "My text"
+        # $myHash[1]
+        Return ,$md5response
     }
 }
