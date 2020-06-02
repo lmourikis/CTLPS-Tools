@@ -26,6 +26,8 @@
 function CTLIsValid-Email { 
     Param(
     [Parameter(Mandatory=$true,ValueFromPipeline=$true,Position=0,ValueFromPipelineByPropertyName=$true)]
+    [AllowNull()]
+    [AllowEmptyString()]
     [string]$EmailAddress,
     [Parameter(Mandatory=$false)]
     [switch]
@@ -65,6 +67,12 @@ function CTLReset-MsolUserPass {
     ) # End of Parameters
 
     Begin {
+    } # End of Begin
+
+
+    Process {
+        # Validating data
+
         # Checking UPN
         $user = Get-MsolUser -UserPrincipalName $UserPrincipalName -ErrorAction SilentlyContinue | select * 
         if ($null -eq $user) {
@@ -83,10 +91,9 @@ function CTLReset-MsolUserPass {
             Write-Host "SMTP Credentials not defined. Will now exit..."
             break
         }
-    } # End of Begin
 
+        # End of data validations
 
-    Process {
         # Resetting user's password
         if ($Password.Length -gt 4 ) {
             $setPassword = $Password

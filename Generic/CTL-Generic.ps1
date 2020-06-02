@@ -30,3 +30,30 @@ function CTLGet-StringHash {
         Return ,$md5response
     }
 }
+
+
+function CTLRetrieve-KVObjectRow { 
+    <#
+        You search for the record in an object, that a specific field has a specific value.
+        For example, for Microsoft 365 Teams, you have an object will all the Tenant's teams.
+        You want the GroupId from a Team that has a specific DiplayName. This function can
+        help you find the Team record.
+    #>
+    Param(
+    [Parameter(Mandatory=$true,ValueFromPipeline=$true,Position=0,ValueFromPipelineByPropertyName=$true)]
+    [object]$KV,
+    [Parameter(Mandatory=$true)]
+    [object]$KeyName,
+    [Parameter(Mandatory=$true)]
+    [object]$KeyValue
+    )
+
+    $KV | % {
+        if ($_.$($KeyName) -eq $KeyValue) {
+            return $_
+            break
+        }
+    }
+
+    return $null
+}
